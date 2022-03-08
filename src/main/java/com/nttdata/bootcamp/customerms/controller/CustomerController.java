@@ -32,8 +32,9 @@ public class CustomerController {
 	
 	@PostMapping("/create")
 	@ResponseStatus(HttpStatus.CREATED)
-	public void createCustomer(@RequestBody Customer customer) {
-		customerService.createCustomer(customer);
+	@ResponseBody
+	public String createCustomer(@RequestBody Customer customer) {
+		return customerService.createCustomer(customer);
 	}
 	
 	@PutMapping(value = "/{id}")

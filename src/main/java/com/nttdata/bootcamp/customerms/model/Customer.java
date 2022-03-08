@@ -19,5 +19,5 @@ public class Customer {
 	String lastName;
 	String documentType;
 	String documentNumber;
-	String businessName;
+	String businessName;	
 }

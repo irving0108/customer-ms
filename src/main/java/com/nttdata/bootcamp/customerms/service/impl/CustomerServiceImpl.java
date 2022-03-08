@@ -1,6 +1,9 @@
 package com.nttdata.bootcamp.customerms.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.nttdata.bootcamp.customerms.model.Customer;
@@ -13,12 +16,19 @@ import reactor.core.publisher.Mono;
 @Service
 public class CustomerServiceImpl implements CustomerService{
 	
+	@Value("${customer.types}")  
+	private List<String> typeCustomer;
+	
 	@Autowired
 	CustomerRepository customerRepository;
 
 	@Override
-	public void createCustomer(Customer e) {
+	public String createCustomer(Customer e) {
+		if(!typeCustomer.contains(e.getCustomerType())) {
+			return "CustomerType invalid!.";
+		}
 		customerRepository.save(e).subscribe();
+		return "Customer created successfully!!!.";
 	}
 
 	@Override
