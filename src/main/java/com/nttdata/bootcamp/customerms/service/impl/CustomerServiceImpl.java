@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 @Service
 public class CustomerServiceImpl implements CustomerService{
 	
-	@Value("${customer.types}")  
+	@Value("${customer.types}")
 	private List<String> typeCustomer;
 	
 	@Autowired
