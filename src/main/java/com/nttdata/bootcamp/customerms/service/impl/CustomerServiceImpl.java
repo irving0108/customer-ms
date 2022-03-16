@@ -20,7 +20,7 @@ public class CustomerServiceImpl implements CustomerService{
 	
 	private static final Logger logger = LoggerFactory.getLogger(CustomerServiceImpl.class);
 	
-	@Value("${customer.types}")
+	@Value("${customer.types:PERSONAL, EMPRESARIAL}")
 	private List<String> typeCustomer;
 	
 	@Autowired
