@@ -7,17 +7,22 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Clase Customer.
+ * @version 1.0, 18/03/2022
+ * @author Irving Chero
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Document
 public class Customer {
-	int id;
-	String customerType;
-	String name;
-	String lastName;
-	String documentType;
-	String documentNumber;
-	String businessName;	
+    int id;
+    String customerType;
+    String name;
+    String lastName;
+    String documentType;
+    String documentNumber;
+    String businessName;
 }
